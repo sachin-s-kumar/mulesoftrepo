@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:http="http://www.mulesoft.org/schema/mule/http" xmlns="http://www.mulesoft.org/schema/mule/core"
+	xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/http/current/mule-http.xsd">
+	<http:listener-config name="HTTP_Listener_config" doc:name="HTTP Listener config" doc:id="d116a45c-72be-4c9c-879f-a6e25c1d6910" >
+		<http:listener-connection host="0.0.0.0" port="8081" />
+	</http:listener-config>
+	<flow name="muletogithubrepoFlow" doc:id="45afddd2-7d19-41b0-9442-7d3bb49a5dc6" >
+		<http:listener doc:name="Listener" doc:id="6db51539-b5d7-412c-92d8-3c5ed138934f" config-ref="HTTP_Listener_config" path="/repo"/>
+		<set-payload value="Hi I am Sachin" doc:name="Set Payload" doc:id="e6bb49ae-4cf5-455f-97ca-c0777294c917" />
+	</flow>
+</mule>
